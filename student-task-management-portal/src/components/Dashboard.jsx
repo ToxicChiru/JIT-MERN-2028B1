@@ -1,11 +1,21 @@
 import StatCard from "./StatCard";
 import TaskCard from "./TaskCard";
 function Dashboard(){
-    const tasks = [{title:"Learn React",description:"Understanding Components",status:"In Progress"},
+    const tasks = [
+        {
+            id:1,
+            title:"Learn React",description:"Understanding Components",status:"In Progress"
+        },
 
-        {title:"Build a Project",description:"Create a simple React app",status:"Completed"},
+        {
+            id:2,
+            title:"Build a Project",description:"Create a simple React app",status:"Completed"
+        },
 
-        {title:"Deploy App",description:"Host the app on a platform",status:"Pending"}];
+        {
+            id:3,
+            title:"Deploy App",description:"Host the app on a platform",status:"Pending"
+        }];
     return (
         <main>
             <div className="stats-container">
@@ -17,7 +27,7 @@ function Dashboard(){
             <h2>Recent Tasks</h2>
             <div className="tasks-container">
                 {tasks.map((task)=>(
-                    <TaskCard title={task.title} description={task.description} status={task.status}/>
+                    <TaskCard key={task.id} title={task.title} description={task.description} status={task.status}/>
                 ))}
             </div>
             <div>

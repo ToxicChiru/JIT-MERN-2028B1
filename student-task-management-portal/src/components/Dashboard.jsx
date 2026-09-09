@@ -1,0 +1,29 @@
+import StatCard from "./StatCard";
+import TaskCard from "./TaskCard";
+function Dashboard(){
+    const tasks = [{title:"Learn React",description:"Understanding Components",status:"In Progress"},
+
+        {title:"Build a Project",description:"Create a simple React app",status:"Completed"},
+
+        {title:"Deploy App",description:"Host the app on a platform",status:"Pending"}];
+    return (
+        <main>
+            <div className="stats-container">
+                <StatCard title={"Total Task"} value={"10"}/>
+                <StatCard title={"Completed"} value={"8"}/>
+                <StatCard title={"Pending"} value={"2"}/>
+                <StatCard title={"Name"} value={"Chiranthan"} />
+            </div>
+            <h2>Recent Tasks</h2>
+            <div className="tasks-container">
+                {tasks.map((task)=>(
+                    <TaskCard title={task.title} description={task.description} status={task.status}/>
+                ))}
+            </div>
+            <div>
+
+            </div>
+        </main>
+    );
+}
+export default Dashboard;

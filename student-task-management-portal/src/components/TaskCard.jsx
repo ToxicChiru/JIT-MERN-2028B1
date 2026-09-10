@@ -4,6 +4,9 @@ function TaskCard(props) {
             <h3>{props.title}</h3>
             <p>{props.description}</p>
             <p>Status: {props.status}</p>
+            <button type="button" onClick={props.onToggle}>
+                Change Status
+            </button>
         </div>
     );
 }
